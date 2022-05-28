@@ -637,3 +637,26 @@ The most comfortable way to "open" a parameter pack is to use a recursive functi
 为了区分NULL和0，C++11引入了空指针nullptr。nullptr的类型为std::nullptr_t而非指针或int，可以保证nullptr表示空指针而不是0。
 在使用空指针时，应该尽量使用nullptr而不是NULL。
 
+## if-switch 中的变量定义 in C++17
+
+在 C++17 之前，可能会存在以下代码：
+
+```cpp
+int a = getavalue();
+int b = getbvalue();
+if(a < b) {
+  cout << a << "\n";
+}
+```
+
+但是这一种写法并不能很好的约束变量 a 与 b 的作用域，a 和 b 只在 if 中使用，但是定义在 if 的代码块之外。
+
+为了优化这种写法，C++17 之后有了一种新的语法：
+
+```cpp
+if(int a = getavalue(), b = getbvalue(); a < b) {
+  cout << a << "\n";
+}
+```
+
+使用这种方式可以尽可能的约束好变量的作用域。

@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 
 - Windows:
  - To compile：`g++ a.cpp -o a.exe`
- - To run：`a.exe 1 2` in cmd or `.\a.exe 1 2` in powershell.
+ - To run：`a.exe 1 2`
 - Ubuntu:
  - To compile: `g++ a.cpp -o a`
  - To run: `./a 1 2`
